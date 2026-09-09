@@ -1,4 +1,3 @@
-css
 /* =========================
    ASTRAHUB
    MAIN STYLESHEET
@@ -86,7 +85,7 @@ body::after {
 
     pointer-events: none;
 
-    z-index: 0;
+    z-index: 1;
 }
 
 .floating-heart {
@@ -96,15 +95,16 @@ body::after {
 
     color: #ff8fca;
 
-    font-size: 20px;
+    font-size: 18px;
 
     line-height: 1;
 
     opacity: 0;
 
     text-shadow:
-        0 0 8px rgba(255, 105, 180, 0.55),
-        0 0 18px rgba(255, 105, 180, 0.25);
+        0 0 8px rgba(255, 105, 180, 0.65),
+        0 0 18px rgba(255, 105, 180, 0.35),
+        0 0 30px rgba(255, 105, 180, 0.15);
 
     animation:
         floatHeart var(--heart-duration) linear forwards;
@@ -146,13 +146,50 @@ body::after {
 }
 
 
-/* Keep website content above the floating hearts */
+/* =========================
+   MOUSE GLOW
+   ========================= */
+
+.cursor-glow {
+    position: fixed;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 999;
+
+    transform: translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(143, 153, 251, 0.16) 0%,
+            rgba(143, 153, 251, 0.08) 30%,
+            rgba(143, 153, 251, 0) 70%
+        );
+
+    left: 0;
+    top: 0;
+
+    transition:
+        left 0.08s ease-out,
+        top 0.08s ease-out;
+}
+
+
+/* =========================
+   WEBSITE CONTENT LAYER
+   ========================= */
 
 .hero,
 .section,
 footer {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 
@@ -1158,10 +1195,6 @@ footer p {
         transition: none;
     }
 
-    .heart-field {
-        display: none;
-    }
-
 }
 
 
@@ -1423,4 +1456,3 @@ footer p {
     }
 
 }
-
