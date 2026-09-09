@@ -314,10 +314,6 @@ header {
 
     padding: 110px 30px;
 
-    /*
-       Prevent the fixed navbar from
-       covering section headings.
-    */
     scroll-margin-top: 100px;
 }
 
@@ -475,6 +471,285 @@ header {
 
 .card-link:hover {
     color: #9b8cff;
+}
+
+
+/* =========================
+   MUSIC & SOCIAL
+   ========================= */
+
+.media-platform {
+    margin-top: 55px;
+
+    padding: 30px;
+
+    border: 1px solid #1d1d27;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(143,124,255,0.045),
+            rgba(255,255,255,0.018)
+        );
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,0.18);
+}
+
+.media-platform-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 30px;
+}
+
+.media-platform-header h3 {
+    font-size: 1.7rem;
+
+    margin-top: 8px;
+}
+
+.media-platform-header p {
+    color: #888895;
+
+    margin-top: 5px;
+}
+
+
+/* =========================
+   SPOTIFY
+   ========================= */
+
+.spotify-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.media-card {
+    background: rgba(255,255,255,0.025);
+
+    border: 1px solid #1d1d27;
+
+    border-radius: 16px;
+
+    padding: 20px;
+
+    overflow: hidden;
+
+    transition: 0.3s ease;
+}
+
+.media-card:hover {
+    border-color: rgba(143,124,255,0.55);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.25);
+}
+
+.media-card h3 {
+    font-size: 1.2rem;
+
+    margin: 8px 0 15px;
+}
+
+.media-card iframe {
+    display: block;
+
+    width: 100%;
+
+    border: 0;
+
+    border-radius: 12px;
+}
+
+.spotify-grid .media-card:last-child {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================
+   SOUNDCLOUD
+   ========================= */
+
+.soundcloud-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.soundcloud-card {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.soundcloud-player {
+    width: 100%;
+
+    height: 166px;
+
+    margin-top: 5px;
+
+    border-radius: 12px;
+}
+
+
+/* =========================
+   MEDIA BUTTONS
+   ========================= */
+
+.media-button {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 10px 16px;
+
+    border-radius: 9px;
+
+    border: 1px solid #333340;
+
+    background: rgba(255,255,255,0.03);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.media-button:hover {
+    border-color: #8f7cff;
+
+    color: #9b8cff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   TIKTOK
+   ========================= */
+
+.tiktok-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.tiktok-card {
+    overflow: hidden;
+
+    border: 1px solid #1d1d27;
+
+    border-radius: 16px;
+
+    background: rgba(255,255,255,0.025);
+
+    transition: 0.3s ease;
+}
+
+.tiktok-card:hover {
+    border-color: rgba(143,124,255,0.55);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.25);
+}
+
+.tiktok-placeholder {
+    min-height: 260px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(143,124,255,0.10),
+            transparent 65%
+        );
+}
+
+.tiktok-placeholder span {
+    font-size: 3rem;
+
+    margin-bottom: 15px;
+}
+
+.tiktok-placeholder strong {
+    font-size: 1.15rem;
+
+    margin-bottom: 5px;
+}
+
+.tiktok-placeholder small {
+    color: #777786;
+
+    font-size: 0.85rem;
+}
+
+.tiktok-card .media-button {
+    margin: 0;
+
+    display: block;
+
+    text-align: center;
+
+    border-radius: 0;
+
+    border: 0;
+
+    border-top: 1px solid #1d1d27;
+}
+
+
+/* =========================
+   SOCIAL BUTTONS
+   ========================= */
+
+.media-social-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-top: 40px;
 }
 
 
@@ -653,6 +928,28 @@ footer p {
     font-size: 0.85rem;
 }
 
+.legal-links {
+    margin-top: 15px;
+}
+
+.legal-links a {
+    color: #777786;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.legal-links a:hover {
+    color: #9b8cff;
+}
+
+.legal-links span {
+    margin: 0 8px;
+
+    color: #444451;
+}
+
 .copyright {
     margin-top: 10px;
 
@@ -725,16 +1022,27 @@ footer p {
 }
 
 
-/* Stagger project and video cards */
+/* =========================
+   STAGGERED ANIMATIONS
+   ========================= */
 
 .project-card:nth-child(2),
-.video-card:nth-child(2) {
+.video-card:nth-child(2),
+.media-card:nth-child(2),
+.tiktok-card:nth-child(2) {
     transition-delay: 0.08s;
 }
 
 .project-card:nth-child(3),
-.video-card:nth-child(3) {
+.video-card:nth-child(3),
+.media-card:nth-child(3),
+.tiktok-card:nth-child(3) {
     transition-delay: 0.16s;
+}
+
+.media-card:nth-child(4),
+.tiktok-card:nth-child(4) {
+    transition-delay: 0.24s;
 }
 
 .stat:nth-child(2) {
@@ -750,7 +1058,9 @@ footer p {
 }
 
 
-/* Respect reduced-motion preferences */
+/* =========================
+   REDUCED MOTION
+   ========================= */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -766,7 +1076,7 @@ footer p {
 
 
 /* =========================
-   MOBILE
+   TABLET
    ========================= */
 
 @media (max-width: 900px) {
@@ -782,8 +1092,29 @@ footer p {
     .stats {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .spotify-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .spotify-grid .media-card:last-child {
+        grid-column: auto;
+    }
+
+    .soundcloud-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tiktok-grid {
+        grid-template-columns: 1fr;
+    }
+
 }
 
+
+/* =========================
+   MOBILE
+   ========================= */
 
 @media (max-width: 650px) {
 
@@ -866,6 +1197,58 @@ footer p {
         gap: 12px;
     }
 
+    .media-platform {
+        padding: 20px;
+
+        margin-top: 40px;
+    }
+
+    .media-platform-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+    }
+
+    .media-platform-header .button {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .spotify-grid,
+    .soundcloud-grid,
+    .tiktok-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .media-card {
+        padding: 15px;
+    }
+
+    .soundcloud-player {
+        height: 166px;
+    }
+
+    .tiktok-placeholder {
+        min-height: 220px;
+    }
+
+    .media-social-buttons {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .media-social-buttons .button {
+        width: 100%;
+
+        text-align: center;
+    }
+
     .video-grid {
         grid-template-columns: 1fr;
 
@@ -897,6 +1280,7 @@ footer p {
 
         text-align: center;
     }
+
 }
 
 
@@ -931,4 +1315,17 @@ footer p {
     .project-stats {
         grid-template-columns: 1fr;
     }
+
+    .media-platform {
+        padding: 15px;
+    }
+
+    .media-card {
+        padding: 12px;
+    }
+
+    .media-platform-header h3 {
+        font-size: 1.4rem;
+    }
+
 }
