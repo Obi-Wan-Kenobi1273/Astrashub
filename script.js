@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
        ========================= */
 
     var revealElements = document.querySelectorAll(
-        ".section, .project-card, .video-card, .stat, .link-card"
+        ".section, .project-card, .video-card, .stat, .link-card, .media-platform, .media-card, .tiktok-card"
     );
 
     var revealObserver = new IntersectionObserver(function (entries) {
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var navLinks = document.querySelectorAll(".nav-links a");
 
     var sections = document.querySelectorAll(
-        "#home, #about, #projects, #videos, #links"
+        "#home, #about, #projects, #music, #videos, #links"
     );
 
     var navObserver = new IntersectionObserver(function (entries) {
