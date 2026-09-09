@@ -1,4 +1,3 @@
-js
 document.addEventListener("DOMContentLoaded", function () {
 
     /* =========================
@@ -20,12 +19,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         heart.textContent = "♥";
 
-        var size = Math.random() * 16 + 10;
+        var size = Math.random() * 12 + 9;
         var left = Math.random() * 100;
-        var duration = Math.random() * 12 + 12;
-        var drift = (Math.random() - 0.5) * 220;
-        var rotation = (Math.random() - 0.5) * 90;
-        var opacity = Math.random() * 0.35 + 0.25;
+        var duration = Math.random() * 10 + 12;
+        var drift = (Math.random() - 0.5) * 180;
+        var rotation = (Math.random() - 0.5) * 80;
+        var opacity = Math.random() * 0.30 + 0.25;
 
         heart.style.left = left + "%";
         heart.style.fontSize = size + "px";
@@ -60,13 +59,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    var heartCount = window.innerWidth <= 650 ? 10 : 18;
+    var heartCount = window.innerWidth <= 650 ? 8 : 14;
 
     for (var i = 0; i < heartCount; i++) {
 
         setTimeout(function () {
             createHeart();
-        }, Math.random() * 10000);
+        }, Math.random() * 8000);
 
     }
 
@@ -196,24 +195,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var cursorGlow = document.createElement("div");
 
-    cursorGlow.style.position = "fixed";
-    cursorGlow.style.width = "300px";
-    cursorGlow.style.height = "300px";
-    cursorGlow.style.borderRadius = "50%";
-    cursorGlow.style.pointerEvents = "none";
-    cursorGlow.style.zIndex = "0";
-
-    cursorGlow.style.background =
-        "radial-gradient(circle, rgba(143, 153, 251, 0.12) 0%, rgba(143, 153, 251, 0) 70%)";
-
-    cursorGlow.style.transform = "translate(-50%, -50%)";
-    cursorGlow.style.left = "0px";
-    cursorGlow.style.top = "0px";
-
-    cursorGlow.style.transition =
-        "left 0.08s ease-out, top 0.08s ease-out";
+    cursorGlow.className = "cursor-glow";
 
     document.body.appendChild(cursorGlow);
+
 
     document.addEventListener("mousemove", function (event) {
 
@@ -221,6 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
         cursorGlow.style.top = event.clientY + "px";
 
     });
+
 
     if (window.matchMedia("(hover: none)").matches) {
         cursorGlow.style.display = "none";
@@ -353,4 +339,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
-
