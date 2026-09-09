@@ -1,3 +1,4 @@
+```css
 /* =========================
    ASTRAHUB
    MAIN STYLESHEET
@@ -67,6 +68,91 @@ body::after {
 
     pointer-events: none;
     z-index: -1;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+   ========================= */
+
+.heart-field {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+.floating-heart {
+    position: absolute;
+
+    bottom: -40px;
+
+    color: #ff8fca;
+
+    font-size: 20px;
+
+    line-height: 1;
+
+    opacity: 0;
+
+    text-shadow:
+        0 0 8px rgba(255, 105, 180, 0.55),
+        0 0 18px rgba(255, 105, 180, 0.25);
+
+    animation:
+        floatHeart var(--heart-duration) linear forwards;
+
+    will-change: transform, opacity;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translate3d(0, 0, 0)
+            rotate(0deg)
+            scale(0.7);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: var(--heart-opacity);
+    }
+
+    45% {
+        opacity: var(--heart-opacity);
+    }
+
+    80% {
+        opacity: calc(var(--heart-opacity) * 0.65);
+    }
+
+    100% {
+        transform:
+            translate3d(var(--heart-drift), -115vh, 0)
+            rotate(var(--heart-rotation))
+            scale(1);
+
+        opacity: 0;
+    }
+}
+
+
+/* Keep website content above the floating hearts */
+
+.hero,
+.section,
+footer {
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -1072,6 +1158,10 @@ footer p {
         transition: none;
     }
 
+    .heart-field {
+        display: none;
+    }
+
 }
 
 
@@ -1281,6 +1371,10 @@ footer p {
         text-align: center;
     }
 
+    .floating-heart {
+        font-size: 16px;
+    }
+
 }
 
 
@@ -1329,3 +1423,4 @@ footer p {
     }
 
 }
+```
