@@ -1,4 +1,80 @@
+```js
 document.addEventListener("DOMContentLoaded", function () {
+
+    /* =========================
+       FLOATING HEARTS
+       ========================= */
+
+    var heartField = document.createElement("div");
+
+    heartField.className = "heart-field";
+
+    document.body.appendChild(heartField);
+
+
+    function createHeart() {
+
+        var heart = document.createElement("span");
+
+        heart.className = "floating-heart";
+
+        heart.textContent = "♥";
+
+        var size = Math.random() * 16 + 10;
+        var left = Math.random() * 100;
+        var duration = Math.random() * 12 + 12;
+        var drift = (Math.random() - 0.5) * 220;
+        var rotation = (Math.random() - 0.5) * 90;
+        var opacity = Math.random() * 0.35 + 0.25;
+
+        heart.style.left = left + "%";
+        heart.style.fontSize = size + "px";
+
+        heart.style.setProperty(
+            "--heart-duration",
+            duration + "s"
+        );
+
+        heart.style.setProperty(
+            "--heart-drift",
+            drift + "px"
+        );
+
+        heart.style.setProperty(
+            "--heart-rotation",
+            rotation + "deg"
+        );
+
+        heart.style.setProperty(
+            "--heart-opacity",
+            opacity
+        );
+
+        heartField.appendChild(heart);
+
+
+        heart.addEventListener("animationend", function () {
+            heart.remove();
+        });
+
+    }
+
+
+    var heartCount = window.innerWidth <= 650 ? 10 : 18;
+
+    for (var i = 0; i < heartCount; i++) {
+
+        setTimeout(function () {
+            createHeart();
+        }, Math.random() * 10000);
+
+    }
+
+
+    setInterval(function () {
+        createHeart();
+    }, 1800);
+
 
     /* =========================
        SCROLL REVEAL
@@ -277,3 +353,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+```
