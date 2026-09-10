@@ -7,27 +7,21 @@ document.addEventListener("DOMContentLoaded", function () {
     /*
      * AstraBot live status
      *
-     * GitHub Pages cannot directly know whether your Discord bot is online.
-     * If you later make a public JSON endpoint, put its URL here.
+     * Cloudflare Worker HTTPS bridge
+     * → Google Cloud VM
+     * → AstraBot status API
      *
-     * Expected response examples:
+     * Expected response:
      *
      * {
      *     "online": true,
      *     "text": "Online",
-     *     "detail": "Discord bot is connected"
+     *     "detail": "AstraBot is connected to Discord"
      * }
-     *
-     * OR:
-     *
-     * {
-     *     "status": "online"
-     * }
-     *
-     * Leave this as null until you have an endpoint.
      */
 
-    var BOT_STATUS_URL = null;
+    var BOT_STATUS_URL =
+        "https://astrabot-status.farrellandrew07.workers.dev/status";
 
 
     /* =========================
