@@ -2399,7 +2399,8 @@ footer {
     }
 
     .nav-logo {
-        font-size: 17px;
+        font-size: 15px;
+        letter-spacing: -0.5px;
     }
 
     .hero {
@@ -2519,6 +2520,10 @@ footer {
         font-size: 62px;
 
         letter-spacing: -4px;
+    }
+
+    .nav-logo {
+        font-size: 14px;
     }
 
     .stats-grid {
