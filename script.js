@@ -4,22 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
        CONFIGURATION
        ========================= */
 
-    /*
-     * AstraBot live status
-     *
-     * Cloudflare Worker HTTPS bridge
-     * → Google Cloud VM
-     * → AstraBot status API
-     *
-     * Expected response:
-     *
-     * {
-     *     "online": true,
-     *     "text": "Online",
-     *     "detail": "AstraBot is connected to Discord"
-     * }
-     */
-
     var BOT_STATUS_URL =
         "https://astrabot-status.farrellandrew07.workers.dev/status";
 
@@ -151,7 +135,14 @@ document.addEventListener("DOMContentLoaded", function () {
             ".gaming-card, " +
             ".experiment-card, " +
             ".timeline-item, " +
-            ".shame-card"
+            ".shame-card, " +
+            ".achievement-card, " +
+            ".roadmap-card, " +
+            ".hall-of-fame-card, " +
+            ".brain-card, " +
+            ".download-card, " +
+            ".system-card, " +
+            ".discord-cta"
         );
 
 
@@ -209,9 +200,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         revealElements.forEach(
             function (element) {
+
                 element.classList.add(
                     "revealed"
                 );
+
             }
         );
 
@@ -322,6 +315,8 @@ document.addEventListener("DOMContentLoaded", function () {
             "#dashboard, " +
             "#projects, " +
             "#gaming, " +
+            "#achievements, " +
+            "#roadmap, " +
             "#experiments, " +
             "#changelog, " +
             "#music, " +
@@ -422,6 +417,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+
         navContainer.classList.remove(
             "open"
         );
@@ -474,6 +470,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
         );
+
+
+        navContainer
+            .querySelectorAll("a")
+            .forEach(
+                function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        function () {
+                            closeMobileMenu();
+                        }
+                    );
+
+                }
+            );
 
     }
 
@@ -851,7 +863,334 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================
-       EASTER EGGS
+       ASTRA'S BRAIN
+       ========================= */
+
+    var brainIdeas = [
+
+        "Build another Geometry Dash level.",
+
+        "Add another 20 commands to AstraBot.",
+
+        "Make a Cloudflare Worker for absolutely no reason.",
+
+        "Start another YAF project.",
+
+        "Rewrite the website again.",
+
+        "Make another API.",
+
+        "Create a random Discord command.",
+
+        "Try another AI video experiment.",
+
+        "Build something at 2AM.",
+
+        "Say \"I'll do it later\" and immediately start it.",
+
+        "Make AstraShub even more unnecessarily complicated.",
+
+        "Add another section to AstraShub.",
+
+        "Build something that nobody asked for.",
+
+        "Make another Geometry Dash XL level.",
+
+        "Create a project and immediately add it to the roadmap.",
+
+        "Open VS Code and accidentally start another project.",
+
+        "Make AstraBot do something completely unnecessary.",
+
+        "Turn a random idea into an actual website.",
+
+        "Spend three hours improving something nobody noticed.",
+
+        "Do absolutely nothing productive and call it research."
+
+    ];
+
+
+    var brainButton =
+        document.getElementById(
+            "brain-randomize"
+        );
+
+    var brainResult =
+        document.getElementById(
+            "brain-result"
+        );
+
+
+    if (
+        brainButton &&
+        brainResult
+    ) {
+
+        brainButton.addEventListener(
+            "click",
+            function () {
+
+                var randomIndex =
+                    Math.floor(
+                        Math.random() *
+                        brainIdeas.length
+                    );
+
+
+                brainResult.textContent =
+                    brainIdeas[
+                        randomIndex
+                    ];
+
+
+                brainButton.classList.add(
+                    "is-spinning"
+                );
+
+
+                setTimeout(
+                    function () {
+
+                        brainButton.classList.remove(
+                            "is-spinning"
+                        );
+
+                    },
+                    500
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =========================
+       ACHIEVEMENTS
+       ========================= */
+
+    var achievementCards =
+        document.querySelectorAll(
+            ".achievement-card"
+        );
+
+
+    achievementCards.forEach(
+        function (card) {
+
+            card.addEventListener(
+                "click",
+                function () {
+
+                    card.classList.toggle(
+                        "achievement-active"
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =========================
+       ROADMAP STATUS
+       ========================= */
+
+    var roadmapCards =
+        document.querySelectorAll(
+            ".roadmap-card"
+        );
+
+
+    roadmapCards.forEach(
+        function (card) {
+
+            var status =
+                card.getAttribute(
+                    "data-status"
+                );
+
+
+            if (!status) {
+                return;
+            }
+
+
+            card.classList.add(
+                "roadmap-" + status
+            );
+
+        }
+    );
+
+
+    /* =========================
+       GEOMETRY DASH HALL OF FAME
+       ========================= */
+
+    var hallOfFameCards =
+        document.querySelectorAll(
+            ".hall-of-fame-card"
+        );
+
+
+    hallOfFameCards.forEach(
+        function (card, index) {
+
+            card.style.setProperty(
+                "--hof-index",
+                index
+            );
+
+
+            card.addEventListener(
+                "click",
+                function () {
+
+                    hallOfFameCards.forEach(
+                        function (otherCard) {
+
+                            if (
+                                otherCard !== card
+                            ) {
+
+                                otherCard.classList.remove(
+                                    "hof-selected"
+                                );
+
+                            }
+
+                        }
+                    );
+
+
+                    card.classList.toggle(
+                        "hof-selected"
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =========================
+       DOWNLOAD CARDS
+       ========================= */
+
+    var downloadCards =
+        document.querySelectorAll(
+            ".download-card"
+        );
+
+
+    downloadCards.forEach(
+        function (card) {
+
+            card.addEventListener(
+                "click",
+                function () {
+
+                    card.classList.add(
+                        "download-started"
+                    );
+
+
+                    setTimeout(
+                        function () {
+
+                            card.classList.remove(
+                                "download-started"
+                            );
+
+                        },
+                        1000
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =========================
+       SYSTEM STATUS
+       ========================= */
+
+    var systemCards =
+        document.querySelectorAll(
+            ".system-card"
+        );
+
+
+    systemCards.forEach(
+        function (card) {
+
+            var status =
+                card.getAttribute(
+                    "data-status"
+                );
+
+
+            if (!status) {
+                return;
+            }
+
+
+            card.classList.add(
+                "system-" + status
+            );
+
+        }
+    );
+
+
+    /* =========================
+       DISCORD CTA
+       ========================= */
+
+    var discordButtons =
+        document.querySelectorAll(
+            ".discord-cta-button"
+        );
+
+
+    discordButtons.forEach(
+        function (button) {
+
+            button.addEventListener(
+                "mouseenter",
+                function () {
+
+                    button.classList.add(
+                        "discord-hover"
+                    );
+
+                }
+            );
+
+
+            button.addEventListener(
+                "mouseleave",
+                function () {
+
+                    button.classList.remove(
+                        "discord-hover"
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =========================
+       HERO EASTER EGG
        ========================= */
 
     var siteTitle =
@@ -1030,7 +1369,7 @@ document.addEventListener("DOMContentLoaded", function () {
        ========================= */
 
     console.log(
-        "%c🌌 AstraShub",
+        "%c🌌 AstraShub v2.2",
         "font-size: 24px; font-weight: 800; color: #8f7cff;"
     );
 
@@ -1042,6 +1381,11 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(
         "%cTry typing DEATHSHOCK, NETFLIX or SHAME.",
         "font-size: 12px; color: #ff72c6;"
+    );
+
+    console.log(
+        "%c🧠 Astra's Brain online. Braincells remaining: 3.",
+        "font-size: 12px; color: #8f7cff;"
     );
 
 });
