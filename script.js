@@ -929,7 +929,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         brainButton.addEventListener(
             "click",
-            function () {
+            function (event) {
+
+                event.preventDefault();
+
+                var currentIdea =
+                    brainResult.textContent.trim();
 
                 var randomIndex =
                     Math.floor(
@@ -938,10 +943,41 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
 
+                if (
+                    brainIdeas.length > 1 &&
+                    brainIdeas[randomIndex] === currentIdea
+                ) {
+
+                    randomIndex =
+                        (randomIndex + 1) %
+                        brainIdeas.length;
+
+                }
+
+
+                brainResult.classList.remove(
+                    "brain-result-pop"
+                );
+
+
+                void brainResult.offsetWidth;
+
+
                 brainResult.textContent =
-                    brainIdeas[
-                        randomIndex
-                    ];
+                    brainIdeas[randomIndex];
+
+
+                brainResult.classList.add(
+                    "brain-result-pop"
+                );
+
+
+                brainButton.classList.remove(
+                    "is-spinning"
+                );
+
+
+                void brainButton.offsetWidth;
 
 
                 brainButton.classList.add(
