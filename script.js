@@ -320,6 +320,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "#experiments, " +
             "#changelog, " +
             "#music, " +
+            "#astrawave, " +
             "#videos, " +
             "#links"
         );
@@ -870,6 +871,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         "Build another Geometry Dash level.",
 
+        "Finish verifying RobTop Journey 2.",
+
         "Add another 20 commands to AstraBot.",
 
         "Make a Cloudflare Worker for absolutely no reason.",
@@ -1328,10 +1331,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 alert(
                     "💀 DEATHSHOCK\n\n" +
+                    "INSANE difficulty.\n" +
                     "3:38 of suffering.\n" +
                     "364+ attempts.\n" +
                     "3,673 jumps.\n" +
                     "6,719 objects.\n\n" +
+                    "Verified and uploaded.\n" +
                     "Worth it? Probably not."
                 );
 
