@@ -722,7 +722,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
         } else if (
-            status === "offline"
+            status ===
+            "offline"
         ) {
 
             pill.classList.add(
@@ -808,7 +809,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (
                 data.online === true ||
-                data.status === "online"
+                data.status ===
+                "online"
             ) {
 
                 setBotStatus(
@@ -871,7 +873,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         "Build another Geometry Dash level.",
 
-        "Finish verifying RobTop Journey 2.",
+        "Start RobTop Journey Extra.",
 
         "Add another 20 commands to AstraBot.",
 
@@ -948,7 +950,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (
                     brainIdeas.length > 1 &&
-                    brainIdeas[randomIndex] === currentIdea
+                    brainIdeas[randomIndex] ===
+                    currentIdea
                 ) {
 
                     randomIndex =
@@ -1410,7 +1413,7 @@ document.addEventListener("DOMContentLoaded", function () {
        ========================= */
 
     console.log(
-        "%c🌌 AstraShub v2.2",
+        "%c🌌 AstraShub v2.3",
         "font-size: 24px; font-weight: 800; color: #8f7cff;"
     );
 
