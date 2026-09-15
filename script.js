@@ -3415,6 +3415,10 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
+            /* =========================
+               DEATHSHOCK SECRET
+               ========================= */
+
             if (
                 typedKeys.indexOf(
                     "DEATHSHOCK"
@@ -3438,6 +3442,36 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
+            /* =========================
+               364 SECRET
+               ========================= */
+
+            if (
+                typedKeys.indexOf(
+                    "364"
+                ) !== -1
+            ) {
+
+                alert(
+                    "💀 364\n\n" +
+                    "You found the number.\n\n" +
+                    "364 attempts.\n" +
+                    "One Deathshock.\n" +
+                    "Absolutely zero sanity.\n\n" +
+                    "And somehow...\n" +
+                    "it was worth it. 💀"
+                );
+
+
+                typedKeys = "";
+
+            }
+
+
+            /* =========================
+               NETFLIX SECRET
+               ========================= */
+
             if (
                 typedKeys.indexOf(
                     "NETFLIX"
@@ -3456,6 +3490,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
 
+
+            /* =========================
+               WALL OF SHAME SECRET
+               ========================= */
 
             if (
                 typedKeys.indexOf(
@@ -3512,7 +3550,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
     console.log(
-        "%cTry typing DEATHSHOCK, NETFLIX or SHAME.",
+        "%cTry typing DEATHSHOCK, 364, NETFLIX or SHAME.",
         "font-size: 12px; color: #ff72c6;"
     );
 
