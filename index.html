@@ -942,10 +942,6 @@
     <div class="minecraft-designer">
 
 
-        <!-- =========================
-             DESIGNER INTRO
-             ========================= -->
-
         <div class="minecraft-build-card minecraft-designer-intro">
 
             <div class="minecraft-card-icon">
@@ -975,14 +971,8 @@
         </div>
 
 
-        <!-- =========================
-             BUILD OPTIONS
-             ========================= -->
-
         <div class="minecraft-builder-grid">
 
-
-            <!-- BUILD TYPE -->
 
             <article class="minecraft-build-card">
 
@@ -1085,8 +1075,6 @@
             </article>
 
 
-            <!-- MATERIALS -->
-
             <article class="minecraft-build-card">
 
                 <div class="minecraft-card-header">
@@ -1115,114 +1103,95 @@
 
                 <div class="minecraft-material-options">
 
-
                     <label class="minecraft-material-option">
                         <input type="checkbox" data-material="oak" checked>
                         <span>Oak Planks</span>
                     </label>
-
 
                     <label class="minecraft-material-option">
                         <input type="checkbox" data-material="spruce">
                         <span>Spruce Planks</span>
                     </label>
 
-
                     <label class="minecraft-material-option">
                         <input type="checkbox" data-material="birch">
                         <span>Birch Planks</span>
                     </label>
-
 
                     <label class="minecraft-material-option">
                         <input type="checkbox" data-material="stone" checked>
                         <span>Stone</span>
                     </label>
 
-
                     <label class="minecraft-material-option">
                         <input type="checkbox" data-material="cobblestone">
                         <span>Cobblestone</span>
                     </label>
-
 
                     <label class="minecraft-material-option">
                         <input type="checkbox" data-material="deepslate">
                         <span>Deepslate</span>
                     </label>
 
-
                     <label class="minecraft-material-option">
                         <input type="checkbox" data-material="bricks">
                         <span>Bricks</span>
                     </label>
-
 
                     <label class="minecraft-material-option">
                         <input type="checkbox" data-material="quartz">
                         <span>Quartz</span>
                     </label>
 
-
                     <label class="minecraft-material-option">
                         <input type="checkbox" data-material="glass" checked>
                         <span>Glass</span>
                     </label>
-
 
                     <label class="minecraft-material-option">
                         <input type="checkbox" data-material="concrete">
                         <span>White Concrete</span>
                     </label>
 
-
                     <label class="minecraft-material-option">
                         <input type="checkbox" data-material="sandstone">
                         <span>Sandstone</span>
                     </label>
-
 
                     <label class="minecraft-material-option">
                         <input type="checkbox" data-material="dark_oak">
                         <span>Dark Oak Planks</span>
                     </label>
 
-
                     <label class="minecraft-material-option">
                         <input type="checkbox" data-material="iron">
                         <span>Iron Block</span>
                     </label>
-
 
                     <label class="minecraft-material-option">
                         <input type="checkbox" data-material="copper">
                         <span>Copper Block</span>
                     </label>
 
-
                     <label class="minecraft-material-option">
                         <input type="checkbox" data-material="lantern">
                         <span>Lantern</span>
                     </label>
-
 
                     <label class="minecraft-material-option">
                         <input type="checkbox" data-material="glass_pane">
                         <span>Glass Pane</span>
                     </label>
 
-
                     <label class="minecraft-material-option">
                         <input type="checkbox" data-material="stairs">
                         <span>Stairs</span>
                     </label>
 
-
                     <label class="minecraft-material-option">
                         <input type="checkbox" data-material="slabs">
                         <span>Slabs</span>
                     </label>
-
 
                     <label class="minecraft-material-option">
                         <input type="checkbox" data-material="doors">
@@ -1233,8 +1202,6 @@
 
             </article>
 
-
-            <!-- DIMENSIONS -->
 
             <article class="minecraft-build-card">
 
@@ -1258,7 +1225,6 @@
 
 
                 <div class="minecraft-dimension-grid">
-
 
                     <div class="minecraft-input-group">
 
@@ -1319,8 +1285,6 @@
 
             </article>
 
-
-            <!-- GENERATOR -->
 
             <article class="minecraft-build-card">
 
@@ -1383,14 +1347,8 @@
         </div>
 
 
-        <!-- =========================
-             RESULTS
-             ========================= -->
-
         <div class="minecraft-results-grid">
 
-
-            <!-- SUMMARY -->
 
             <article class="minecraft-build-card minecraft-result-card">
 
@@ -1459,8 +1417,6 @@
             </article>
 
 
-            <!-- MATERIAL LIST -->
-
             <article class="minecraft-build-card">
 
                 <div class="minecraft-card-header">
@@ -1503,8 +1459,6 @@
             </article>
 
 
-            <!-- TIME -->
-
             <article class="minecraft-build-card">
 
                 <div class="minecraft-card-header">
@@ -1541,8 +1495,6 @@
             </article>
 
 
-            <!-- INSTRUCTIONS -->
-
             <article class="minecraft-build-card minecraft-instructions-card">
 
                 <div class="minecraft-card-header">
@@ -1576,8 +1528,6 @@
             </article>
 
 
-            <!-- LAYERS -->
-
             <article class="minecraft-build-card">
 
                 <div class="minecraft-card-header">
@@ -1610,8 +1560,6 @@
 
             </article>
 
-
-            <!-- VISUAL -->
 
             <article class="minecraft-build-card minecraft-visual-card">
 
@@ -1647,10 +1595,6 @@
 
         </div>
 
-
-        <!-- =========================
-             FAVOURITES
-             ========================= -->
 
         <div class="minecraft-build-card minecraft-favourites-card">
 
@@ -1699,10 +1643,6 @@
 
         </div>
 
-
-        <!-- =========================
-             EXTRA BUILD INFO
-             ========================= -->
 
         <div class="minecraft-build-card minecraft-builder-footer-card">
 
@@ -2687,6 +2627,7 @@
             <p
                 id="brain-result"
                 class="brain-result"
+                aria-live="polite"
             >
                 Build another Geometry Dash level.
             </p>
@@ -2695,6 +2636,7 @@
                 id="brain-randomize"
                 class="button primary-button"
                 type="button"
+                aria-label="Randomize Astra's current braincell thought"
             >
                 🎲 Randomize Braincell
             </button>
