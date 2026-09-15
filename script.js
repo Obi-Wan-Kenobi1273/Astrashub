@@ -2355,8 +2355,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 progress.textContent =
-                    percentage +
-                    "% complete";
+                        percentage +
+                        "% complete";
 
 
                 var descriptionElement =
@@ -3384,13 +3384,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================
-       DASH EASTER EGG EFFECT
+       DASH VISUAL EFFECT
        ========================= */
 
     var dashEffectActive = false;
 
 
-    function createDashEffect() {
+    function triggerDashEffect() {
 
         if (dashEffectActive) {
             return;
@@ -3425,15 +3425,19 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        var speedLineCount =
-            window.innerWidth <= 650
-                ? 7
-                : 12;
+        var speedLines =
+            document.createElement(
+                "div"
+            );
+
+
+        speedLines.className =
+            "dash-speed-lines";
 
 
         for (
             var lineIndex = 0;
-            lineIndex < speedLineCount;
+            lineIndex < 18;
             lineIndex++
         ) {
 
@@ -3448,29 +3452,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             line.style.setProperty(
-                "--dash-line-top",
+                "--dash-line-x",
                 (
                     Math.random() * 100
-                ) +
-                "%"
-            );
-
-
-            line.style.setProperty(
-                "--dash-line-height",
-                (
-                    Math.random() * 3 + 1
-                ) +
-                "px"
-            );
-
-
-            line.style.setProperty(
-                "--dash-line-duration",
-                (
-                    Math.random() * 0.35 + 0.35
-                ) +
-                "s"
+                ) + "%"
             );
 
 
@@ -3478,165 +3463,73 @@ document.addEventListener("DOMContentLoaded", function () {
                 "--dash-line-delay",
                 (
                     Math.random() * 0.35
-                ) +
-                "s"
+                ) + "s"
             );
 
 
-            overlay.appendChild(
+            line.style.setProperty(
+                "--dash-line-duration",
+                (
+                    Math.random() * 0.45 +
+                    0.35
+                ) + "s"
+            );
+
+
+            line.style.setProperty(
+                "--dash-line-width",
+                (
+                    Math.random() * 180 +
+                    70
+                ) + "px"
+            );
+
+
+            speedLines.appendChild(
                 line
             );
 
         }
 
 
-        var particleCount =
-            window.innerWidth <= 650
-                ? 26
-                : 48;
+        overlay.appendChild(
+            speedLines
+        );
 
 
-        for (
-            var particleIndex = 0;
-            particleIndex < particleCount;
-            particleIndex++
-        ) {
-
-            var particle =
-                document.createElement(
-                    "span"
-                );
-
-
-            var particleTypes = [
-                "square",
-                "diamond",
-                "circle"
-            ];
-
-
-            particle.className =
-                "dash-particle " +
-                particleTypes[
-                    Math.floor(
-                        Math.random() *
-                        particleTypes.length
-                    )
-                ];
-
-
-            var size =
-                Math.random() * 16 + 5;
-
-
-            var angle =
-                Math.random() *
-                Math.PI *
-                2;
-
-
-            var distance =
-                Math.random() * 48 + 25;
-
-
-            var x =
-                Math.cos(angle) *
-                distance;
-
-
-            var y =
-                Math.sin(angle) *
-                distance;
-
-
-            particle.style.setProperty(
-                "--dash-size",
-                size + "px"
-            );
-
-
-            particle.style.setProperty(
-                "--dash-left",
-                (
-                    Math.random() * 100
-                ) +
-                "%"
-            );
-
-
-            particle.style.setProperty(
-                "--dash-top",
-                (
-                    Math.random() * 100
-                ) +
-                "%"
-            );
-
-
-            particle.style.setProperty(
-                "--dash-x",
-                x + "vw"
-            );
-
-
-            particle.style.setProperty(
-                "--dash-y",
-                y + "vh"
-            );
-
-
-            particle.style.setProperty(
-                "--dash-rotation",
-                (
-                    Math.random() * 720 -
-                    360
-                ) +
-                "deg"
-            );
-
-
-            particle.style.setProperty(
-                "--dash-duration",
-                (
-                    Math.random() * 0.9 +
-                    0.9
-                ) +
-                "s"
-            );
-
-
-            particle.style.setProperty(
-                "--dash-delay",
-                (
-                    Math.random() * 0.5
-                ) +
-                "s"
-            );
-
-
-            particle.style.setProperty(
-                "--dash-radius",
-                Math.random() > 0.55
-                    ? "50%"
-                    : "3px"
-            );
-
-
-            overlay.appendChild(
-                particle
-            );
-
-        }
-
-
-        var content =
+        var grid =
             document.createElement(
                 "div"
             );
 
 
-        content.className =
-            "dash-easter-content";
+        grid.className =
+            "dash-grid"
+        ;
+
+
+        overlay.appendChild(
+            grid
+        );
+
+
+        var title =
+            document.createElement(
+                "div"
+            );
+
+
+        title.className =
+            "dash-title";
+
+
+        title.innerHTML =
+            "<span>DASH</span><small>ASTRASHUB EASTER EGG</small>";
+
+
+        overlay.appendChild(
+            title
+        );
 
 
         var cube =
@@ -3649,51 +3542,83 @@ document.addEventListener("DOMContentLoaded", function () {
             "dash-cube";
 
 
-        var title =
-            document.createElement(
-                "h2"
-            );
+        cube.innerHTML =
+            "<span></span><span></span><span></span><span></span>";
 
 
-        title.className =
-            "dash-title";
-
-
-        title.textContent =
-            "DASH";
-
-
-        var subtitle =
-            document.createElement(
-                "p"
-            );
-
-
-        subtitle.className =
-            "dash-subtitle";
-
-
-        subtitle.textContent =
-            "Geometry Dash mode activated";
-
-
-        content.appendChild(
+        overlay.appendChild(
             cube
         );
 
 
-        content.appendChild(
-            title
-        );
+        var particles =
+            document.createElement(
+                "div"
+            );
 
 
-        content.appendChild(
-            subtitle
-        );
+        particles.className =
+            "dash-particles";
+
+
+        for (
+            var particleIndex = 0;
+            particleIndex < 45;
+            particleIndex++
+        ) {
+
+            var particle =
+                document.createElement(
+                    "span"
+                );
+
+
+            particle.className =
+                "dash-particle";
+
+
+            particle.style.setProperty(
+                "--dash-particle-x",
+                (
+                    Math.random() * 100
+                ) + "%"
+            );
+
+
+            particle.style.setProperty(
+                "--dash-particle-y",
+                (
+                    Math.random() * 100
+                ) + "%"
+            );
+
+
+            particle.style.setProperty(
+                "--dash-particle-delay",
+                (
+                    Math.random() * 0.8
+                ) + "s"
+            );
+
+
+            particle.style.setProperty(
+                "--dash-particle-size",
+                (
+                    Math.random() * 7 +
+                    3
+                ) + "px"
+            );
+
+
+            particles.appendChild(
+                particle
+            );
+
+        }
 
 
         overlay.appendChild(
-            content
+            particles
         );
 
 
@@ -3703,39 +3628,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         document.body.classList.add(
-            "dash-shake"
+            "dash-screen-shake"
         );
 
 
-        setTimeout(
+        window.setTimeout(
             function () {
 
                 document.body.classList.remove(
-                    "dash-shake"
+                    "dash-screen-shake"
                 );
 
             },
-            650
+            850
         );
 
 
-        setTimeout(
+        window.setTimeout(
             function () {
 
-                if (
-                    overlay &&
-                    overlay.parentNode
-                ) {
+                overlay.classList.add(
+                    "dash-ending"
+                );
 
-                    overlay.remove();
+            },
+            1800
+        );
 
-                }
 
+        window.setTimeout(
+            function () {
+
+                overlay.remove();
 
                 dashEffectActive = false;
 
             },
-            3100
+            2400
         );
 
     }
@@ -3892,7 +3821,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 typedKeys = "";
 
-                createDashEffect();
+                triggerDashEffect();
 
                 return;
 
