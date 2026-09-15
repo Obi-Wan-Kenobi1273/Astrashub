@@ -46,6 +46,7 @@
             <a href="#about">About</a>
             <a href="#dashboard">Dashboard</a>
             <a href="#projects">Projects</a>
+            <a href="#minecraft-build-designer">Build Designer</a>
             <a href="#gaming">Gaming</a>
             <a href="#achievements">Achievements</a>
             <a href="#roadmap">Roadmap</a>
@@ -337,7 +338,6 @@
             </div>
 
             <small>Content production</small>
-
         </article>
 
     </div>
@@ -346,7 +346,7 @@
 
         <div class="metric-card">
             <span>Projects</span>
-            <strong>7+</strong>
+            <strong>8+</strong>
         </div>
 
         <div class="metric-card">
@@ -541,6 +541,68 @@
             <div class="project-footer">
                 <span>⚙️ Still growing</span>
             </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+            <div class="project-card-header">
+                <span class="project-icon">🧱</span>
+                <span class="project-status">New</span>
+            </div>
+
+            <h3>Minecraft Build Designer</h3>
+
+            <p>
+                A Minecraft building assistant that lets you choose
+                a build type, materials, dimensions and style before
+                generating a complete build plan, material list and
+                step-by-step construction guide.
+            </p>
+
+            <div class="project-stats">
+
+                <div>
+                    <span>Platform</span>
+                    <strong>Web</strong>
+                </div>
+
+                <div>
+                    <span>Build Types</span>
+                    <strong>8+</strong>
+                </div>
+
+                <div>
+                    <span>Materials</span>
+                    <strong>Custom</strong>
+                </div>
+
+                <div>
+                    <span>Status</span>
+                    <strong>Building</strong>
+                </div>
+
+            </div>
+
+            <div class="project-tags">
+                <span>Minecraft</span>
+                <span>Builder</span>
+                <span>Generator</span>
+                <span>Web</span>
+                <span>Interactive</span>
+            </div>
+
+            <div class="project-footer">
+                <span>🧱 Build smarter, not harder</span>
+            </div>
+
+            <a
+                href="#minecraft-build-designer"
+                class="button primary-button"
+            >
+                Open Build Designer →
+            </a>
 
         </article>
 
@@ -781,10 +843,528 @@
 </section>
 
 
-<section class="section currently-section">
+<section id="minecraft-build-designer" class="section minecraft-builder-section">
 
     <div class="section-heading">
         <span class="section-number">04</span>
+
+        <div>
+            <p class="section-label">MINECRAFT TOOL</p>
+            <h2>Minecraft Build Designer</h2>
+        </div>
+    </div>
+
+    <div class="project-card minecraft-builder-intro">
+
+        <div class="project-card-header">
+            <span class="project-icon">🧱</span>
+
+            <span class="project-status">
+                Experimental
+            </span>
+        </div>
+
+        <h3>Build it without watching 47 YouTube tutorials.</h3>
+
+        <p>
+            Design a Minecraft build by choosing what you're making,
+            how big it should be, what materials you want and what
+            style you're going for. The designer will eventually
+            generate the build plan, material quantities, estimated
+            build time and step-by-step instructions.
+        </p>
+
+    </div>
+
+
+    <div class="projects-grid">
+
+        <article class="project-card minecraft-builder-card">
+
+            <div class="project-card-header">
+                <span class="project-icon">🏠</span>
+
+                <span class="project-status">
+                    Build Setup
+                </span>
+            </div>
+
+            <h3>1. Choose Your Build</h3>
+
+            <div class="builder-form-group">
+
+                <label for="minecraft-build-type">
+                    Build Type
+                </label>
+
+                <select id="minecraft-build-type">
+                    <option value="house">🏠 House</option>
+                    <option value="castle">🏰 Castle</option>
+                    <option value="tower">🗼 Tower</option>
+                    <option value="bridge">🌉 Bridge</option>
+                    <option value="factory">🏭 Factory</option>
+                    <option value="farm">🌾 Farm</option>
+                    <option value="storage">📦 Storage</option>
+                    <option value="custom">🧱 Custom</option>
+                </select>
+
+            </div>
+
+
+            <div class="builder-form-group">
+
+                <label for="minecraft-style">
+                    Building Style
+                </label>
+
+                <select id="minecraft-style">
+                    <option value="medieval">🏰 Medieval</option>
+                    <option value="modern">🏙️ Modern</option>
+                    <option value="rustic">🌲 Rustic</option>
+                    <option value="fantasy">✨ Fantasy</option>
+                    <option value="industrial">🏭 Industrial</option>
+                    <option value="cottage">🌼 Cottage</option>
+                    <option value="fortified">🛡️ Fortified</option>
+                    <option value="custom">🎨 Custom</option>
+                </select>
+
+            </div>
+
+        </article>
+
+
+        <article class="project-card minecraft-builder-card">
+
+            <div class="project-card-header">
+                <span class="project-icon">🧱</span>
+
+                <span class="project-status">
+                    Materials
+                </span>
+            </div>
+
+            <h3>2. Choose Materials</h3>
+
+            <div class="builder-form-group">
+
+                <label for="minecraft-primary-block">
+                    Primary Block
+                </label>
+
+                <select id="minecraft-primary-block">
+                    <option value="stone">Stone</option>
+                    <option value="cobblestone">Cobblestone</option>
+                    <option value="stone-bricks">Stone Bricks</option>
+                    <option value="oak">Oak Planks</option>
+                    <option value="spruce">Spruce Planks</option>
+                    <option value="dark-oak">Dark Oak Planks</option>
+                    <option value="birch">Birch Planks</option>
+                    <option value="deepslate">Deepslate</option>
+                    <option value="bricks">Bricks</option>
+                    <option value="quartz">Quartz</option>
+                    <option value="concrete">Concrete</option>
+                </select>
+
+            </div>
+
+
+            <div class="builder-form-group">
+
+                <label for="minecraft-secondary-block">
+                    Secondary Block
+                </label>
+
+                <select id="minecraft-secondary-block">
+                    <option value="oak">Oak Planks</option>
+                    <option value="spruce">Spruce Planks</option>
+                    <option value="dark-oak">Dark Oak Planks</option>
+                    <option value="stone">Stone</option>
+                    <option value="cobblestone">Cobblestone</option>
+                    <option value="stone-bricks">Stone Bricks</option>
+                    <option value="deepslate">Deepslate</option>
+                    <option value="bricks">Bricks</option>
+                    <option value="glass">Glass</option>
+                    <option value="quartz">Quartz</option>
+                </select>
+
+            </div>
+
+
+            <div class="builder-form-group">
+
+                <label for="minecraft-accent-block">
+                    Accent Block
+                </label>
+
+                <select id="minecraft-accent-block">
+                    <option value="glass">Glass</option>
+                    <option value="lantern">Lanterns</option>
+                    <option value="stone-bricks">Stone Bricks</option>
+                    <option value="deepslate">Deepslate</option>
+                    <option value="bricks">Bricks</option>
+                    <option value="quartz">Quartz</option>
+                    <option value="copper">Copper</option>
+                    <option value="iron">Iron</option>
+                </select>
+
+            </div>
+
+        </article>
+
+
+        <article class="project-card minecraft-builder-card">
+
+            <div class="project-card-header">
+                <span class="project-icon">📐</span>
+
+                <span class="project-status">
+                    Dimensions
+                </span>
+            </div>
+
+            <h3>3. Set Dimensions</h3>
+
+            <div class="builder-dimensions">
+
+                <div class="builder-form-group">
+
+                    <label for="minecraft-width">
+                        Width
+                    </label>
+
+                    <input
+                        id="minecraft-width"
+                        type="number"
+                        min="3"
+                        max="200"
+                        value="15"
+                    >
+
+                    <small>Blocks</small>
+
+                </div>
+
+
+                <div class="builder-form-group">
+
+                    <label for="minecraft-length">
+                        Length
+                    </label>
+
+                    <input
+                        id="minecraft-length"
+                        type="number"
+                        min="3"
+                        max="200"
+                        value="15"
+                    >
+
+                    <small>Blocks</small>
+
+                </div>
+
+
+                <div class="builder-form-group">
+
+                    <label for="minecraft-height">
+                        Height
+                    </label>
+
+                    <input
+                        id="minecraft-height"
+                        type="number"
+                        min="3"
+                        max="200"
+                        value="10"
+                    >
+
+                    <small>Blocks</small>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <article class="project-card minecraft-builder-card">
+
+            <div class="project-card-header">
+                <span class="project-icon">🤖</span>
+
+                <span class="project-status">
+                    Generator
+                </span>
+            </div>
+
+            <h3>4. Generate Your Build</h3>
+
+            <p>
+                Once the options are selected, generate a build plan
+                using the chosen dimensions, style and materials.
+            </p>
+
+            <div class="project-tags">
+                <span>Automatic</span>
+                <span>Custom</span>
+                <span>Regeneratable</span>
+            </div>
+
+            <div class="project-footer">
+
+                <button
+                    class="button primary-button minecraft-generate-button"
+                    id="minecraft-generate"
+                    type="button"
+                >
+                    🤖 Generate Build
+                </button>
+
+                <button
+                    class="button secondary-button"
+                    id="minecraft-regenerate"
+                    type="button"
+                >
+                    🔄 Regenerate
+                </button>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <div class="projects-grid minecraft-results-grid">
+
+        <article class="project-card minecraft-result-card">
+
+            <div class="project-card-header">
+                <span class="project-icon">📊</span>
+
+                <span class="project-status">
+                    Build Summary
+                </span>
+            </div>
+
+            <h3 id="minecraft-build-title">
+                Your build will appear here
+            </h3>
+
+            <p id="minecraft-build-summary">
+                Configure your build above and press Generate Build.
+            </p>
+
+            <div class="project-stats">
+
+                <div>
+                    <span>Width</span>
+                    <strong id="minecraft-result-width">—</strong>
+                </div>
+
+                <div>
+                    <span>Length</span>
+                    <strong id="minecraft-result-length">—</strong>
+                </div>
+
+                <div>
+                    <span>Height</span>
+                    <strong id="minecraft-result-height">—</strong>
+                </div>
+
+                <div>
+                    <span>Total Blocks</span>
+                    <strong id="minecraft-result-blocks">—</strong>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <article class="project-card minecraft-result-card">
+
+            <div class="project-card-header">
+                <span class="project-icon">🧱</span>
+
+                <span class="project-status">
+                    Materials
+                </span>
+            </div>
+
+            <h3>Material List</h3>
+
+            <div
+                class="minecraft-material-list"
+                id="minecraft-material-list"
+            >
+                <p>
+                    Generate a build to calculate the required
+                    materials and quantities.
+                </p>
+            </div>
+
+            <button
+                class="button secondary-button"
+                id="minecraft-copy-materials"
+                type="button"
+            >
+                📋 Copy Material List
+            </button>
+
+        </article>
+
+
+        <article class="project-card minecraft-result-card">
+
+            <div class="project-card-header">
+                <span class="project-icon">⏱️</span>
+
+                <span class="project-status">
+                    Estimate
+                </span>
+            </div>
+
+            <h3>Build Time</h3>
+
+            <p id="minecraft-time-estimate">
+                Generate a build to estimate how long construction
+                might take.
+            </p>
+
+            <div class="project-tags">
+                <span id="minecraft-time-label">
+                    Waiting for build
+                </span>
+            </div>
+
+        </article>
+
+
+        <article class="project-card minecraft-result-card">
+
+            <div class="project-card-header">
+                <span class="project-icon">📖</span>
+
+                <span class="project-status">
+                    Instructions
+                </span>
+            </div>
+
+            <h3>Step-by-Step Guide</h3>
+
+            <ol
+                class="minecraft-instructions"
+                id="minecraft-instructions"
+            >
+                <li>Choose your build settings.</li>
+                <li>Generate the build.</li>
+                <li>Your building instructions will appear here.</li>
+            </ol>
+
+        </article>
+
+    </div>
+
+
+    <div class="project-card minecraft-layer-card">
+
+        <div class="project-card-header">
+
+            <span class="project-icon">🧱</span>
+
+            <span class="project-status">
+                Layer Guide
+            </span>
+
+        </div>
+
+        <h3>Layer-by-Layer Build Guide</h3>
+
+        <p>
+            Each layer of the structure can eventually be displayed
+            separately so you can keep the designer open beside
+            Minecraft and build one layer at a time.
+        </p>
+
+        <div
+            class="minecraft-layer-guide"
+            id="minecraft-layer-guide"
+        >
+
+            <div class="minecraft-layer-placeholder">
+                <span>🧱</span>
+
+                <strong>
+                    Layer 1
+                </strong>
+
+                <small>
+                    Generate a build to display the layer guide.
+                </small>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="project-card minecraft-actions-card">
+
+        <div class="project-card-header">
+
+            <span class="project-icon">⭐</span>
+
+            <span class="project-status">
+                Build Tools
+            </span>
+
+        </div>
+
+        <h3>Save, Favourite & Export</h3>
+
+        <p>
+            Future versions will allow builds to be saved,
+            favourited and exported as complete blueprints or
+            build-guide files.
+        </p>
+
+        <div class="project-tags">
+            <span>⭐ Favourites</span>
+            <span>💾 Save Builds</span>
+            <span>📥 Blueprint Export</span>
+            <span>📱 Mobile Friendly</span>
+        </div>
+
+        <div class="project-footer">
+
+            <button
+                class="button secondary-button"
+                id="minecraft-favourite"
+                type="button"
+            >
+                ⭐ Favourite Build
+            </button>
+
+            <button
+                class="button secondary-button"
+                id="minecraft-export"
+                type="button"
+            >
+                📥 Export Blueprint
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section currently-section">
+
+    <div class="section-heading">
+        <span class="section-number">05</span>
 
         <div>
             <p class="section-label">RIGHT NOW</p>
@@ -856,11 +1436,12 @@
             <div>
                 <span class="currently-label">BUILDING</span>
 
-                <h3>Minecraft Builds</h3>
+                <h3>Minecraft Build Designer</h3>
 
                 <p>
-                    Building stuff in Minecraft and working on
-                    Minecraft builds.
+                    Building an interactive Minecraft assistant for
+                    designing structures, calculating materials and
+                    generating step-by-step construction guides.
                 </p>
             </div>
 
@@ -874,7 +1455,7 @@
 <section id="achievements" class="section achievements-section">
 
     <div class="section-heading">
-        <span class="section-number">05</span>
+        <span class="section-number">06</span>
 
         <div>
             <p class="section-label">ACHIEVEMENTS</p>
@@ -1000,7 +1581,7 @@
 <section id="roadmap" class="section roadmap-section">
 
     <div class="section-heading">
-        <span class="section-number">06</span>
+        <span class="section-number">07</span>
 
         <div>
             <p class="section-label">ROADMAP</p>
@@ -1027,6 +1608,29 @@
                 <span>Website</span>
                 <span>v2.2</span>
                 <span>Complete</span>
+            </div>
+        </article>
+
+
+        <article class="project-card roadmap-card" data-status="building">
+            <div class="project-card-header">
+                <span class="project-icon">🧱</span>
+                <span class="project-status">Building</span>
+            </div>
+
+            <h3>Minecraft Build Designer</h3>
+
+            <p>
+                Create an interactive Minecraft assistant that
+                generates builds, calculates materials, estimates
+                construction time and provides layer-by-layer guides.
+            </p>
+
+            <div class="project-tags">
+                <span>Minecraft</span>
+                <span>Generator</span>
+                <span>Web Tool</span>
+                <span>Building</span>
             </div>
         </article>
 
@@ -1145,7 +1749,7 @@
 <section class="section planned-section">
 
     <div class="section-heading">
-        <span class="section-number">07</span>
+        <span class="section-number">08</span>
 
         <div>
             <p class="section-label">FUTURE PROJECTS</p>
@@ -1288,26 +1892,27 @@
 
         <article class="project-card">
             <div class="project-card-header">
-                <span class="project-icon">🎬</span>
-                <span class="project-status">Planned</span>
+                <span class="project-icon">🧱</span>
+                <span class="project-status">Building</span>
             </div>
 
-            <h3>YAF Movie</h3>
+            <h3>Minecraft Build Designer</h3>
 
             <p>
-                A larger connected YAF story built around community
-                characters, ideas and recurring videos.
+                A Minecraft building assistant designed to generate
+                structures, material lists, construction estimates
+                and detailed build instructions.
             </p>
 
             <div class="project-tags">
-                <span>YAF</span>
-                <span>Movie</span>
-                <span>Community</span>
-                <span>Storytelling</span>
+                <span>Minecraft</span>
+                <span>Builder</span>
+                <span>Generator</span>
+                <span>Interactive</span>
             </div>
 
             <div class="project-footer">
-                <span>🎥 Future project</span>
+                <span>🧱 Build smarter</span>
             </div>
         </article>
 
@@ -1319,7 +1924,7 @@
 <section id="gaming" class="section">
 
     <div class="section-heading">
-        <span class="section-number">08</span>
+        <span class="section-number">09</span>
 
         <div>
             <p class="section-label">GAMING CORNER</p>
@@ -1431,7 +2036,7 @@
 <section class="section hall-of-fame-section">
 
     <div class="section-heading">
-        <span class="section-number">09</span>
+        <span class="section-number">10</span>
 
         <div>
             <p class="section-label">GEOMETRY DASH</p>
@@ -1579,7 +2184,7 @@
 <section id="experiments" class="section experiments-section">
 
     <div class="section-heading">
-        <span class="section-number">10</span>
+        <span class="section-number">11</span>
 
         <div>
             <p class="section-label">LABORATORY</p>
@@ -1660,7 +2265,7 @@
 <section class="section brain-section">
 
     <div class="section-heading">
-        <span class="section-number">11</span>
+        <span class="section-number">12</span>
 
         <div>
             <p class="section-label">ASTRA'S BRAIN</p>
@@ -1701,7 +2306,7 @@
 <section class="section downloads-section">
 
     <div class="section-heading">
-        <span class="section-number">12</span>
+        <span class="section-number">13</span>
 
         <div>
             <p class="section-label">DOWNLOADS</p>
@@ -1793,7 +2398,7 @@
 <section class="section systems-section">
 
     <div class="section-heading">
-        <span class="section-number">13</span>
+        <span class="section-number">14</span>
 
         <div>
             <p class="section-label">INFRASTRUCTURE</p>
@@ -1894,7 +2499,7 @@
 <section id="changelog" class="section">
 
     <div class="section-heading">
-        <span class="section-number">14</span>
+        <span class="section-number">15</span>
 
         <div>
             <p class="section-label">UPDATES</p>
@@ -1910,8 +2515,56 @@
             <div class="timeline-content">
 
                 <div class="timeline-top">
-                    <span class="timeline-version">v2.6</span>
+                    <span class="timeline-version">v2.7</span>
                     <span class="timeline-date">Current</span>
+                </div>
+
+                <h3>The Minecraft Build Designer Update</h3>
+
+                <p>
+                    AstraShub now has a dedicated Minecraft Build Designer
+                    project designed to help create builds without needing
+                    to search through endless tutorials.
+                </p>
+
+                <ul class="changelog-list">
+                    <li>Added <strong>Minecraft Build Designer</strong></li>
+                    <li>Added build type selection</li>
+                    <li>Added building style selection</li>
+                    <li>Added primary, secondary and accent materials</li>
+                    <li>Added custom width, length and height controls</li>
+                    <li>Added build generation interface</li>
+                    <li>Added automatic material calculation interface</li>
+                    <li>Added estimated build-time interface</li>
+                    <li>Added step-by-step instruction interface</li>
+                    <li>Added layer-by-layer guide interface</li>
+                    <li>Added copyable material list interface</li>
+                    <li>Added favourite and export controls</li>
+                    <li>Added Minecraft Build Designer to the project list</li>
+                    <li>Added Minecraft Build Designer to the roadmap</li>
+                    <li>Added Minecraft Build Designer to the navigation</li>
+                </ul>
+
+                <div class="timeline-tags">
+                    <span>v2.7</span>
+                    <span>Minecraft</span>
+                    <span>Build Designer</span>
+                    <span>Generator</span>
+                    <span>Website</span>
+                </div>
+
+            </div>
+        </article>
+
+
+        <article class="timeline-item">
+            <div class="timeline-marker"></div>
+
+            <div class="timeline-content">
+
+                <div class="timeline-top">
+                    <span class="timeline-version">v2.6</span>
+                    <span class="timeline-date">Previous</span>
                 </div>
 
                 <h3>The RobTop Journey 2 Update</h3>
@@ -2248,7 +2901,7 @@
 <section class="section shame-section">
 
     <div class="section-heading">
-        <span class="section-number">15</span>
+        <span class="section-number">16</span>
 
         <div>
             <p class="section-label">PLEASE DON'T ASK</p>
@@ -2348,16 +3001,17 @@
 
 
         <article class="shame-card">
-            <div class="shame-icon">🔥</div>
+            <div class="shame-icon">🧱</div>
 
             <div>
-                <span class="shame-type">ASTRA</span>
+                <span class="shame-type">MINECRAFT</span>
 
-                <h3>"I'll do it later"</h3>
+                <h3>"I'll just build it myself."</h3>
 
                 <p>
-                    One of the most powerful project-management
-                    strategies known to mankind.
+                    Apparently searching YouTube for tutorials
+                    wasn't painful enough, so a complete Minecraft
+                    building assistant had to be created instead.
                 </p>
             </div>
         </article>
@@ -2370,7 +3024,7 @@
 <section class="section discord-cta">
 
     <div class="section-heading">
-        <span class="section-number">16</span>
+        <span class="section-number">17</span>
 
         <div>
             <p class="section-label">COMMUNITY</p>
@@ -2423,7 +3077,7 @@
 <section id="music" class="section">
 
     <div class="section-heading">
-        <span class="section-number">17</span>
+        <span class="section-number">18</span>
 
         <div>
             <p class="section-label">MUSIC & SOCIAL</p>
@@ -2604,7 +3258,7 @@
 <section id="astrawave" class="section">
 
     <div class="section-heading">
-        <span class="section-number">18</span>
+        <span class="section-number">19</span>
 
         <div>
             <p class="section-label">MUSIC PLAYER</p>
@@ -2686,7 +3340,7 @@
 <section id="videos" class="section">
 
     <div class="section-heading">
-        <span class="section-number">19</span>
+        <span class="section-number">20</span>
 
         <div>
             <p class="section-label">VIDEO</p>
@@ -2749,7 +3403,7 @@
 
     <div class="section-heading">
 
-        <span class="section-number">20</span>
+        <span class="section-number">21</span>
 
         <div>
             <p class="section-label">ELSEWHERE</p>
