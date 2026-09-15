@@ -488,6 +488,8 @@ header {
 
     -webkit-background-clip: text;
     background-clip: text;
+
+    -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
@@ -3049,30 +3051,6 @@ footer {
 
 
 /* =========================
-   REDUCED MOTION
-   ========================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    html {
-        scroll-behavior: auto;
-    }
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-
-    .floating-heart,
-    .cursor-glow {
-        display: none !important;
-    }
-
-}
-/* =========================
    MINECRAFT BUILD DESIGNER
    ========================= */
 
@@ -3936,6 +3914,612 @@ footer {
 
     .minecraft-generator .button {
         width: 100%;
+    }
+
+}
+
+
+/* =========================
+   DASH EASTER EGG
+   ========================= */
+
+.dash-easter-egg {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(143, 124, 255, 0.20),
+            rgba(8, 8, 13, 0.96) 68%
+        );
+
+    animation:
+        dash-overlay-in 0.25s ease-out forwards,
+        dash-overlay-out 0.55s ease-in 2.35s forwards;
+}
+
+.dash-easter-egg::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -30%;
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            transparent 0,
+            transparent 34px,
+            rgba(143, 124, 255, 0.055) 35px,
+            transparent 36px
+        );
+
+    transform:
+        rotate(-8deg)
+        scale(1.15);
+
+    animation:
+        dash-grid-scroll 0.55s linear infinite;
+}
+
+.dash-easter-egg::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 0,
+            rgba(0, 0, 0, 0.50) 75%
+        );
+
+    pointer-events: none;
+}
+
+.dash-easter-content {
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    text-align: center;
+
+    animation:
+        dash-content-in 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.3) forwards;
+}
+
+.dash-title {
+    position: relative;
+
+    margin: 0;
+
+    color: white;
+
+    font-size:
+        clamp(
+            70px,
+            18vw,
+            190px
+        );
+
+    line-height: 0.85;
+
+    letter-spacing: -7px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        5px 5px 0 rgba(143, 124, 255, 0.95),
+        10px 10px 0 rgba(255, 114, 198, 0.45),
+        0 0 25px rgba(143, 124, 255, 0.85),
+        0 0 70px rgba(255, 114, 198, 0.35);
+
+    transform:
+        skew(-4deg);
+
+    animation:
+        dash-title-pulse 0.65s ease-in-out infinite alternate;
+}
+
+.dash-subtitle {
+    margin: 0;
+
+    color: var(--purple-light);
+
+    font-size:
+        clamp(
+            11px,
+            2vw,
+            17px
+        );
+
+    font-weight: 800;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 18px rgba(143, 124, 255, 0.7);
+}
+
+.dash-cube {
+    position: absolute;
+
+    width: 72px;
+    height: 72px;
+
+    border: 6px solid white;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--pink)
+        );
+
+    box-shadow:
+        inset 0 0 0 4px rgba(8, 8, 13, 0.25),
+        0 0 0 4px rgba(143, 124, 255, 0.22),
+        0 0 35px rgba(143, 124, 255, 0.85);
+
+    transform:
+        rotate(45deg);
+
+    animation:
+        dash-cube-spin 0.75s cubic-bezier(0.55, 0, 0.25, 1) infinite;
+}
+
+.dash-cube::before,
+.dash-cube::after {
+    content: "";
+
+    position: absolute;
+
+    background: rgba(255, 255, 255, 0.88);
+}
+
+.dash-cube::before {
+    width: 13px;
+    height: 13px;
+
+    top: 16px;
+    left: 15px;
+
+    border-radius: 3px;
+}
+
+.dash-cube::after {
+    width: 13px;
+    height: 13px;
+
+    top: 16px;
+    right: 15px;
+
+    border-radius: 3px;
+}
+
+.dash-particle {
+    position: absolute;
+
+    width: var(--dash-size);
+    height: var(--dash-size);
+
+    left: var(--dash-left);
+    top: var(--dash-top);
+
+    border-radius:
+        var(--dash-radius);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--pink)
+        );
+
+    box-shadow:
+        0 0 15px rgba(143, 124, 255, 0.65);
+
+    opacity: 0;
+
+    animation:
+        dash-particle-fly var(--dash-duration) ease-out var(--dash-delay) forwards;
+}
+
+.dash-particle.square {
+    border-radius: 3px;
+}
+
+.dash-particle.diamond {
+    transform: rotate(45deg);
+}
+
+.dash-particle.circle {
+    border-radius: 50%;
+}
+
+.dash-flash {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 4;
+
+    background: white;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    animation:
+        dash-flash 0.55s ease-out forwards;
+}
+
+.dash-speed-line {
+    position: absolute;
+
+    left: -20%;
+
+    width: 140%;
+
+    height: var(--dash-line-height);
+
+    top: var(--dash-line-top);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.85),
+            rgba(143, 124, 255, 0.75),
+            transparent
+        );
+
+    transform:
+        skewX(-25deg)
+        translateX(-40%);
+
+    opacity: 0;
+
+    animation:
+        dash-speed-line var(--dash-line-duration) ease-out var(--dash-line-delay) forwards;
+}
+
+body.dash-shake {
+    animation:
+        dash-screen-shake 0.55s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+@keyframes dash-overlay-in {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(1.08);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+
+}
+
+@keyframes dash-overlay-out {
+
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+@keyframes dash-content-in {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(0.55)
+            rotate(-3deg);
+    }
+
+    65% {
+        opacity: 1;
+
+        transform:
+            scale(1.08)
+            rotate(1deg);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0deg);
+    }
+
+}
+
+@keyframes dash-title-pulse {
+
+    0% {
+        transform:
+            skew(-4deg)
+            scale(1);
+    }
+
+    100% {
+        transform:
+            skew(-4deg)
+            scale(1.045);
+    }
+
+}
+
+@keyframes dash-cube-spin {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(45deg);
+    }
+
+    50% {
+        transform:
+            translateY(-18px)
+            rotate(225deg);
+    }
+
+    100% {
+        transform:
+            translateY(0)
+            rotate(405deg);
+    }
+
+}
+
+@keyframes dash-grid-scroll {
+
+    0% {
+        transform:
+            rotate(-8deg)
+            translate3d(0, 0, 0)
+            scale(1.15);
+    }
+
+    100% {
+        transform:
+            rotate(-8deg)
+            translate3d(70px, 70px, 0)
+            scale(1.15);
+    }
+
+}
+
+@keyframes dash-particle-fly {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate3d(0, 0, 0)
+            scale(0.25)
+            rotate(0deg);
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate3d(
+                var(--dash-x),
+                var(--dash-y),
+                0
+            )
+            scale(1)
+            rotate(
+                var(--dash-rotation)
+            );
+    }
+
+}
+
+@keyframes dash-flash {
+
+    0% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+@keyframes dash-speed-line {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            skewX(-25deg)
+            translateX(-60%);
+    }
+
+    20% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            skewX(-25deg)
+            translateX(60%);
+    }
+
+}
+
+@keyframes dash-screen-shake {
+
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    10% {
+        transform: translate3d(-8px, 4px, 0);
+    }
+
+    20% {
+        transform: translate3d(7px, -5px, 0);
+    }
+
+    30% {
+        transform: translate3d(-6px, -3px, 0);
+    }
+
+    40% {
+        transform: translate3d(5px, 5px, 0);
+    }
+
+    50% {
+        transform: translate3d(-4px, -4px, 0);
+    }
+
+    60% {
+        transform: translate3d(4px, 3px, 0);
+    }
+
+    70% {
+        transform: translate3d(-3px, 1px, 0);
+    }
+
+    80% {
+        transform: translate3d(2px, -2px, 0);
+    }
+
+    90% {
+        transform: translate3d(-1px, 1px, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+}
+
+
+/* =========================
+   DASH RESPONSIVE
+   ========================= */
+
+@media (max-width: 650px) {
+
+    .dash-cube {
+        width: 52px;
+        height: 52px;
+
+        border-width: 4px;
+
+        border-radius: 7px;
+    }
+
+    .dash-cube::before,
+    .dash-cube::after {
+        width: 9px;
+        height: 9px;
+
+        top: 11px;
+    }
+
+    .dash-cube::before {
+        left: 10px;
+    }
+
+    .dash-cube::after {
+        right: 10px;
+    }
+
+    .dash-subtitle {
+        letter-spacing: 3px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .floating-heart,
+    .cursor-glow {
+        display: none !important;
+    }
+
+    .dash-easter-egg {
+        animation: none;
+        opacity: 1;
+    }
+
+    .dash-easter-content,
+    .dash-title,
+    .dash-cube,
+    .dash-particle,
+    .dash-speed-line,
+    .dash-flash {
+        animation: none;
     }
 
 }
