@@ -3072,3 +3072,870 @@ footer {
     }
 
 }
+/* =========================
+   MINECRAFT BUILD DESIGNER
+   ========================= */
+
+.minecraft-designer {
+    position: relative;
+}
+
+.minecraft-build-card {
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(22, 20, 35, 0.92),
+            rgba(12, 11, 19, 0.92)
+        );
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.20);
+}
+
+.minecraft-step {
+    margin-bottom: 22px;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background:
+        rgba(255, 255, 255, 0.025);
+}
+
+.minecraft-step:last-child {
+    margin-bottom: 0;
+}
+
+.minecraft-step-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.minecraft-step-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(143, 124, 255, 0.10);
+
+    font-size: 21px;
+}
+
+.minecraft-step-number {
+    color: var(--purple);
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.minecraft-step h3 {
+    margin-top: 2px;
+
+    font-size: 21px;
+}
+
+.minecraft-step-description {
+    margin-bottom: 20px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+}
+
+
+/* BUILD OPTIONS */
+
+.minecraft-options-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+.minecraft-option-group {
+    padding: 18px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    background:
+        rgba(255, 255, 255, 0.02);
+}
+
+.minecraft-option-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--text-soft);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.minecraft-option-group select,
+.minecraft-option-group input[type="number"] {
+    width: 100%;
+
+    padding: 12px 13px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background:
+        rgba(0, 0, 0, 0.25);
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.minecraft-option-group select:hover,
+.minecraft-option-group input[type="number"]:hover,
+.minecraft-option-group select:focus,
+.minecraft-option-group input[type="number"]:focus {
+    border-color: var(--border-hover);
+
+    background:
+        rgba(143, 124, 255, 0.06);
+}
+
+.minecraft-option-group select option {
+    background: var(--card-solid);
+
+    color: var(--text);
+}
+
+
+/* MATERIALS */
+
+.minecraft-material-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 9px;
+}
+
+.minecraft-material {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 11px 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 11px;
+
+    background:
+        rgba(255, 255, 255, 0.02);
+
+    cursor: pointer;
+
+    color: var(--text-soft);
+
+    font-size: 10px;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.minecraft-material:hover {
+    transform: translateY(-2px);
+
+    border-color: var(--border-hover);
+
+    background:
+        rgba(143, 124, 255, 0.06);
+}
+
+.minecraft-material input {
+    width: 15px;
+    height: 15px;
+
+    margin: 0;
+
+    accent-color: var(--purple);
+
+    cursor: pointer;
+}
+
+.minecraft-material:has(input:checked) {
+    border-color:
+        rgba(143, 124, 255, 0.45);
+
+    background:
+        rgba(143, 124, 255, 0.10);
+
+    color: var(--text);
+}
+
+
+/* DIMENSIONS */
+
+.minecraft-dimensions-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+.minecraft-dimension {
+    padding: 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.02);
+}
+
+.minecraft-dimension label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--text-muted);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.minecraft-dimension input {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background:
+        rgba(0, 0, 0, 0.25);
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.minecraft-dimension input:focus {
+    border-color: var(--border-hover);
+
+    background:
+        rgba(143, 124, 255, 0.06);
+}
+
+.minecraft-dimensions-note {
+    margin-top: 10px;
+
+    color: var(--text-muted);
+
+    font-size: 9px;
+}
+
+
+/* GENERATOR */
+
+.minecraft-generator {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 22px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(143, 124, 255, 0.08),
+            rgba(255, 114, 198, 0.04)
+        );
+}
+
+.minecraft-generator-text {
+    color: var(--text-soft);
+
+    font-size: 11px;
+}
+
+.minecraft-generator-buttons {
+    display: flex;
+
+    gap: 9px;
+
+    flex-wrap: wrap;
+}
+
+.minecraft-generator .button {
+    min-width: 145px;
+}
+
+.minecraft-regenerate {
+    border: 1px solid var(--border);
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    color: var(--text);
+}
+
+
+/* STATUS */
+
+.minecraft-build-status {
+    margin-top: 15px;
+
+    padding: 12px 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 11px;
+
+    background:
+        rgba(255, 255, 255, 0.02);
+
+    color: var(--text-muted);
+
+    font-size: 10px;
+
+    text-align: center;
+}
+
+.minecraft-build-status.success {
+    border-color:
+        rgba(99, 230, 162, 0.25);
+
+    background:
+        rgba(99, 230, 162, 0.05);
+
+    color: var(--success);
+}
+
+.minecraft-build-status.error {
+    border-color:
+        rgba(255, 107, 129, 0.25);
+
+    background:
+        rgba(255, 107, 129, 0.05);
+
+    color: var(--danger);
+}
+
+
+/* GENERATED RESULT */
+
+.minecraft-result {
+    margin-top: 22px;
+
+    padding: 25px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(143, 124, 255, 0.055),
+            rgba(255, 255, 255, 0.018)
+        );
+}
+
+.minecraft-result-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+.minecraft-result-header h3 {
+    font-size: 22px;
+}
+
+.minecraft-result-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+}
+
+.minecraft-result-stat {
+    padding: 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+}
+
+.minecraft-result-stat span,
+.minecraft-result-stat strong {
+    display: block;
+}
+
+.minecraft-result-stat span {
+    color: var(--text-muted);
+
+    font-size: 9px;
+}
+
+.minecraft-result-stat strong {
+    margin-top: 4px;
+
+    color: var(--purple-light);
+
+    font-size: 18px;
+}
+
+
+/* RESULT SECTIONS */
+
+.minecraft-result-section {
+    margin-top: 15px;
+
+    padding: 20px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    background:
+        rgba(255, 255, 255, 0.018);
+}
+
+.minecraft-result-section-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 14px;
+}
+
+.minecraft-result-section-header span {
+    font-size: 20px;
+}
+
+.minecraft-result-section-header h4 {
+    font-size: 15px;
+}
+
+.minecraft-material-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 7px;
+
+    list-style: none;
+}
+
+.minecraft-material-list li {
+    padding: 9px 11px;
+
+    border-radius: 9px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    color: var(--text-soft);
+
+    font-size: 9px;
+}
+
+.minecraft-copy-materials {
+    margin-top: 12px;
+}
+
+
+/* INSTRUCTIONS */
+
+.minecraft-instructions {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    list-style: none;
+
+    counter-reset: minecraft-step;
+}
+
+.minecraft-instructions li {
+    position: relative;
+
+    padding: 11px 12px 11px 38px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    color: var(--text-soft);
+
+    font-size: 10px;
+
+    counter-increment: minecraft-step;
+}
+
+.minecraft-instructions li::before {
+    content: counter(minecraft-step);
+
+    position: absolute;
+
+    left: 11px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 7px;
+
+    background:
+        rgba(143, 124, 255, 0.10);
+
+    color: var(--purple-light);
+
+    font-size: 8px;
+
+    font-weight: 800;
+}
+
+
+/* LAYERS */
+
+.minecraft-layers {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    max-height: 420px;
+
+    overflow-y: auto;
+
+    padding-right: 5px;
+}
+
+.minecraft-layer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 10px 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    background:
+        rgba(255, 255, 255, 0.02);
+}
+
+.minecraft-layer strong {
+    color: var(--purple-light);
+
+    font-size: 10px;
+}
+
+.minecraft-layer span {
+    color: var(--text-muted);
+
+    font-size: 9px;
+
+    text-align: right;
+}
+
+
+/* BUILD PREVIEW */
+
+.minecraft-visual {
+    min-height: 260px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(143, 124, 255, 0.08),
+            transparent 65%
+        );
+}
+
+.minecraft-footprint {
+    display: grid;
+
+    gap: 2px;
+
+    max-width: 100%;
+
+    max-height: 220px;
+
+    overflow: auto;
+
+    padding: 8px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background:
+        rgba(0, 0, 0, 0.25);
+}
+
+.minecraft-footprint-block {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 2px;
+
+    background:
+        var(--purple);
+
+    box-shadow:
+        0 0 5px
+        rgba(143, 124, 255, 0.25);
+}
+
+
+/* FAVOURITES */
+
+.minecraft-favourites {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+.minecraft-favourite-build {
+    padding: 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+}
+
+.minecraft-favourite-build h4 {
+    margin-bottom: 4px;
+
+    font-size: 13px;
+}
+
+.minecraft-favourite-build p {
+    color: var(--text-muted);
+
+    font-size: 9px;
+}
+
+.minecraft-favourite-build button {
+    margin-top: 9px;
+}
+
+
+/* ARCHITECTURE ENGINE */
+
+.minecraft-engine {
+    margin-top: 22px;
+
+    padding: 25px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 114, 198, 0.045),
+            rgba(143, 124, 255, 0.045)
+        );
+}
+
+.minecraft-engine h3 {
+    margin-bottom: 8px;
+
+    font-size: 18px;
+}
+
+.minecraft-engine p {
+    color: var(--text-muted);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+
+/* MINECRAFT RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .minecraft-material-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .minecraft-result-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .minecraft-build-card {
+        padding: 16px;
+    }
+
+    .minecraft-step {
+        padding: 18px;
+    }
+
+    .minecraft-options-grid,
+    .minecraft-dimensions-grid,
+    .minecraft-result-grid,
+    .minecraft-material-grid,
+    .minecraft-material-list,
+    .minecraft-favourites {
+        grid-template-columns: 1fr;
+    }
+
+    .minecraft-generator {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .minecraft-generator-buttons {
+        width: 100%;
+    }
+
+    .minecraft-generator .button {
+        flex: 1;
+    }
+
+    .minecraft-result {
+        padding: 16px;
+    }
+
+    .minecraft-result-section {
+        padding: 15px;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .minecraft-generator-buttons {
+        flex-direction: column;
+    }
+
+    .minecraft-generator .button {
+        width: 100%;
+    }
+
+}
