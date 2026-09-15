@@ -1253,9 +1253,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-    if (
-        minecraftDesigner
-    ) {
+    if (minecraftDesigner) {
 
         var buildType =
             document.getElementById(
@@ -1612,17 +1610,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 selected.length === 0
             ) {
 
-                selected.push(
-                    "oak"
-                );
-
-                selected.push(
-                    "stone"
-                );
-
-                selected.push(
-                    "glass"
-                );
+                selected.push("oak");
+                selected.push("stone");
+                selected.push("glass");
 
             }
 
@@ -2029,20 +2019,63 @@ document.addEventListener("DOMContentLoaded", function () {
                         );
 
 
+                    item.className =
+                        "minecraft-material-item";
+
+
                     var definition =
                         minecraftMaterials[
                             key
                         ];
 
 
-                    item.textContent =
+                    var name =
                         definition
-                            ? definition.name +
-                              " × " +
-                              materials[key]
-                            : key +
-                              " × " +
-                              materials[key];
+                            ? definition.name
+                            : key;
+
+
+                    var quantity =
+                        materials[key];
+
+
+                    var nameElement =
+                        document.createElement(
+                            "span"
+                        );
+
+
+                    nameElement.className =
+                        "minecraft-material-name";
+
+
+                    nameElement.textContent =
+                        name;
+
+
+                    var quantityElement =
+                        document.createElement(
+                            "strong"
+                        );
+
+
+                    quantityElement.className =
+                        "minecraft-material-quantity";
+
+
+                    quantityElement.textContent =
+                        "× " +
+                        quantity;
+
+
+                    item.appendChild(
+                        nameElement
+                    );
+
+
+                    item.appendChild(
+                        quantityElement
+                    );
 
 
                     materialList.appendChild(
@@ -2064,7 +2097,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             instructions.push(
-                "1. Prepare a flat building area measuring " +
+                "Prepare a flat building area measuring " +
                 options.width +
                 " × " +
                 options.length +
@@ -2073,17 +2106,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             instructions.push(
-                "2. Mark the four corners of the build before placing the main structure."
+                "Mark the four corners of the build before placing the main structure."
             );
 
 
             instructions.push(
-                "3. Build the foundation across the full footprint using your primary material."
+                "Build the foundation across the full footprint using your primary material."
             );
 
 
             instructions.push(
-                "4. Raise the exterior walls to approximately " +
+                "Raise the exterior walls to approximately " +
                 options.height +
                 " blocks high."
             );
@@ -2095,7 +2128,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ) {
 
                 instructions.push(
-                    "5. Add reinforced corner towers and connect them with the main castle walls."
+                    "Add reinforced corner towers and connect them with the main castle walls."
                 );
 
             } else if (
@@ -2104,7 +2137,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ) {
 
                 instructions.push(
-                    "5. Build upward in sections, adding windows and support details between floors."
+                    "Build upward in sections, adding windows and support details between floors."
                 );
 
             } else if (
@@ -2113,7 +2146,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ) {
 
                 instructions.push(
-                    "5. Construct the supports first, then extend the bridge deck between them."
+                    "Construct the supports first, then extend the bridge deck between them."
                 );
 
             } else if (
@@ -2122,7 +2155,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ) {
 
                 instructions.push(
-                    "5. Divide the interior into crop, storage and access areas."
+                    "Divide the interior into crop, storage and access areas."
                 );
 
             } else if (
@@ -2131,42 +2164,42 @@ document.addEventListener("DOMContentLoaded", function () {
             ) {
 
                 instructions.push(
-                    "5. Add large industrial rooms, support beams and exterior machinery details."
+                    "Add large industrial rooms, support beams and exterior machinery details."
                 );
 
             } else {
 
                 instructions.push(
-                    "5. Add doors, windows and the main interior layout."
+                    "Add doors, windows and the main interior layout."
                 );
 
             }
 
 
             instructions.push(
-                "6. Construct the roof using the selected " +
+                "Construct the roof using the selected " +
                 options.style.toLowerCase() +
                 " style."
             );
 
 
             instructions.push(
-                "7. Add windows, doors, stairs, lighting and decorative details."
+                "Add windows, doors, stairs, lighting and decorative details."
             );
 
 
             instructions.push(
-                "8. Check every layer against the layer guide before moving to the next section."
+                "Check every layer against the layer guide before moving to the next section."
             );
 
 
             instructions.push(
-                "9. Finish the exterior landscaping and surrounding details."
+                "Finish the exterior landscaping and surrounding details."
             );
 
 
             instructions.push(
-                "10. Walk around the completed build and replace any blocks that look out of place."
+                "Walk around the completed build and replace any blocks that look out of place."
             );
 
 
@@ -2195,6 +2228,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         document.createElement(
                             "li"
                         );
+
+
+                    item.className =
+                        "minecraft-instruction";
 
 
                     item.textContent =
@@ -2300,16 +2337,51 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                item.innerHTML =
-                    "<strong>Layer " +
-                    layer +
-                    "</strong>" +
-                    "<span>" +
+                var title =
+                    document.createElement(
+                        "strong"
+                    );
+
+
+                title.textContent =
+                    "Layer " +
+                    layer;
+
+
+                var progress =
+                    document.createElement(
+                        "span"
+                    );
+
+
+                progress.textContent =
                     percentage +
-                    "% complete</span>" +
-                    "<p>" +
-                    description +
-                    "</p>";
+                    "% complete";
+
+
+                var descriptionElement =
+                    document.createElement(
+                        "p"
+                    );
+
+
+                descriptionElement.textContent =
+                    description;
+
+
+                item.appendChild(
+                    title
+                );
+
+
+                item.appendChild(
+                    progress
+                );
+
+
+                item.appendChild(
+                    descriptionElement
+                );
 
 
                 layerOutput.appendChild(
@@ -2328,6 +2400,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.createElement(
                         "p"
                     );
+
+
+                more.className =
+                    "minecraft-more-layers";
 
 
                 more.textContent =
@@ -2448,6 +2524,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.createElement(
                     "p"
                 );
+
+
+            caption.className =
+                "minecraft-preview-caption";
 
 
             caption.textContent =
@@ -2573,6 +2653,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             renderFavourites();
 
+
             updateStatus(
                 "⭐ Build saved to favourites.",
                 "success"
@@ -2611,6 +2692,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
 
+                empty.className =
+                    "minecraft-favourites-empty";
+
+
                 empty.textContent =
                     "No saved builds yet.";
 
@@ -2638,22 +2723,56 @@ document.addEventListener("DOMContentLoaded", function () {
                         "minecraft-favourite";
 
 
-                    item.innerHTML =
-                        "<strong>" +
+                    var title =
+                        document.createElement(
+                            "strong"
+                        );
+
+
+                    title.textContent =
                         build.type +
                         " • " +
-                        build.style +
-                        "</strong>" +
-                        "<span>" +
+                        build.style;
+
+
+                    var dimensions =
+                        document.createElement(
+                            "span"
+                        );
+
+
+                    dimensions.textContent =
                         build.width +
                         " × " +
                         build.length +
                         " × " +
-                        build.height +
-                        "</span>" +
-                        "<small>" +
-                        build.totalBlocks +
-                        " blocks</small>";
+                        build.height;
+
+
+                    var blocks =
+                        document.createElement(
+                            "small"
+                        );
+
+
+                    blocks.textContent =
+                        build.totalBlocks.toLocaleString() +
+                        " blocks";
+
+
+                    item.appendChild(
+                        title
+                    );
+
+
+                    item.appendChild(
+                        dimensions
+                    );
+
+
+                    item.appendChild(
+                        blocks
+                    );
 
 
                     item.addEventListener(
@@ -2821,6 +2940,7 @@ document.addEventListener("DOMContentLoaded", function () {
             textarea.style.position =
                 "fixed";
 
+
             textarea.style.opacity =
                 "0";
 
@@ -2949,6 +3069,24 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
 
 
+                    var constructionTime =
+                        minecraftDesigner.querySelector(
+                            ".minecraft-build-time-display"
+                        );
+
+
+                    if (
+                        constructionTime
+                    ) {
+
+                        constructionTime.textContent =
+                            formatTime(
+                                result.hours
+                            );
+
+                    }
+
+
                     minecraftDesigner.dataset.generated =
                         "true";
 
@@ -2958,6 +3096,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             {
                                 options:
                                     options,
+
                                 result:
                                     result
                             }
@@ -3064,6 +3203,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (!rawBuild) {
 
                         generateBuild();
+
 
                         setTimeout(
                             function () {
