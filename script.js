@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
        ========================= */
 
     var BOT_STATUS_URL =
-        "https://astrabot-status.farrellandrew07.workers.dev/status";
+        "https://bot.astrashub.co.uk/status";
 
 
     /* =========================
