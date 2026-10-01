@@ -3,25 +3,25 @@
    ========================= */
 
 :root {
-    --bg: #08080d;
-    --bg-soft: #0d0d15;
-    --card: rgba(20, 18, 31, 0.72);
-    --card-solid: #14121f;
+    --bg: #080d0a;
+    --bg-soft: #101a13;
+    --card: rgba(20, 31, 23, 0.78);
+    --card-solid: #142018;
 
-    --purple: #8f7cff;
-    --purple-light: #b7adff;
-    --pink: #ff72c6;
+    --purple: #d62839;
+    --purple-light: #ffb4b9;
+    --pink: #e63946;
 
-    --text: #f4f2ff;
-    --text-soft: #aaa5bd;
-    --text-muted: #777286;
+    --text: #fff7ed;
+    --text-soft: #d8d0c7;
+    --text-muted: #9b948b;
 
     --border: rgba(255, 255, 255, 0.08);
-    --border-hover: rgba(143, 124, 255, 0.45);
+    --border-hover: rgba(214, 40, 57, 0.55);
 
-    --success: #63e6a2;
-    --warning: #ffd166;
-    --danger: #ff6b81;
+    --success: #63d471;
+    --warning: #f6c453;
+    --danger: #ef476f;
 
     --max-width: 1200px;
     --header-height: 76px;
@@ -44,12 +44,12 @@ body {
     background:
         radial-gradient(
             circle at 20% 10%,
-            rgba(143, 124, 255, 0.10),
+            rgba(214, 40, 57, 0.10),
             transparent 28%
         ),
         radial-gradient(
             circle at 80% 30%,
-            rgba(255, 114, 198, 0.07),
+            rgba(30, 120, 65, 0.09),
             transparent 25%
         ),
         linear-gradient(
@@ -110,7 +110,7 @@ a {
 
 
 /* =========================
-   FLOATING HEARTS
+   FLOATING CHRISTMAS
    ========================= */
 
 .heart-field {
@@ -135,15 +135,15 @@ a {
     opacity: var(--heart-opacity);
 
     animation:
-        float-heart var(--heart-duration) linear forwards;
+        float-snowflake var(--heart-duration) linear forwards;
 
     text-shadow:
-        0 0 15px rgba(255, 114, 198, 0.4);
+        0 0 15px rgba(214, 40, 57, 0.38);
 
     user-select: none;
 }
 
-@keyframes float-heart {
+@keyframes float-snowflake {
 
     0% {
         transform:
@@ -1373,7 +1373,7 @@ header {
     border-radius: 14px;
 
     background:
-        rgba(143, 124, 255, 0.10);
+        rgba(214, 40, 57, 0.10);
 
     font-size: 23px;
 }
@@ -1557,7 +1557,7 @@ header {
     background:
         linear-gradient(
             145deg,
-            rgba(143, 124, 255, 0.055),
+            rgba(214, 40, 57, 0.055),
             rgba(255, 255, 255, 0.02)
         );
 
@@ -1634,7 +1634,7 @@ header {
     background:
         linear-gradient(
             var(--purple),
-            rgba(143, 124, 255, 0.05)
+            rgba(214, 40, 57, 0.05)
         );
 }
 
@@ -1662,7 +1662,7 @@ header {
 
     box-shadow:
         0 0 15px
-        rgba(143, 124, 255, 0.5);
+        rgba(214, 40, 57, 0.5);
 }
 
 .timeline-content {
@@ -1949,7 +1949,7 @@ header {
     border-radius: 999px;
 
     background:
-        rgba(143, 124, 255, 0.10);
+        rgba(214, 40, 57, 0.10);
 
     color: var(--purple-light);
 
@@ -2469,7 +2469,7 @@ header {
         linear-gradient(
             135deg,
             rgba(143, 124, 255, 0.12),
-            rgba(255, 114, 198, 0.07)
+            rgba(30, 120, 65, 0.09)
         );
 
     box-shadow:
@@ -4029,7 +4029,7 @@ footer {
     border-radius: 12px;
 
     background:
-        rgba(143, 124, 255, 0.10);
+        rgba(214, 40, 57, 0.10);
 
     font-size: 21px;
 }
@@ -4203,10 +4203,10 @@ footer {
 
 .minecraft-material:has(input:checked) {
     border-color:
-        rgba(143, 124, 255, 0.45);
+        rgba(214, 40, 57, 0.55);
 
     background:
-        rgba(143, 124, 255, 0.10);
+        rgba(214, 40, 57, 0.10);
 
     color: var(--text);
 }
@@ -4402,7 +4402,7 @@ footer {
     background:
         linear-gradient(
             145deg,
-            rgba(143, 124, 255, 0.055),
+            rgba(214, 40, 57, 0.055),
             rgba(255, 255, 255, 0.018)
         );
 }
@@ -4578,7 +4578,7 @@ footer {
     border-radius: 7px;
 
     background:
-        rgba(143, 124, 255, 0.10);
+        rgba(214, 40, 57, 0.10);
 
     color: var(--purple-light);
 
@@ -4955,4 +4955,76 @@ footer {
         display: none !important;
     }
 
+}
+
+/* =========================
+   CHRISTMAS 2026 OVERRIDES
+   ========================= */
+
+:root {
+    --christmas-red: #d62839;
+    --christmas-green: #1f7a45;
+    --christmas-green-dark: #0f3d25;
+    --christmas-gold: #f6c453;
+    --christmas-cream: #fff7ed;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at 18% 8%,
+            rgba(214, 40, 57, 0.13),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 82% 25%,
+            rgba(31, 122, 69, 0.11),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(246, 196, 83, 0.055),
+            transparent 35%
+        ),
+        linear-gradient(
+            rgba(255, 255, 255, 0.018) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.018) 1px,
+            transparent 1px
+        ),
+        var(--bg);
+}
+
+::selection {
+    background: rgba(214, 40, 57, 0.35);
+    color: #fff7ed;
+}
+
+button:hover,
+a:hover {
+    --christmas-hover: rgba(214, 40, 57, 0.08);
+}
+
+.christmas-accent,
+[data-theme="christmas"] {
+    color: var(--christmas-cream);
+}
+
+.christmas-accent::before {
+    content: "🎄 ";
+}
+
+.christmas-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(246, 196, 83, 0.35);
+    background: rgba(246, 196, 83, 0.08);
+    color: var(--christmas-gold);
+    font-weight: 800;
 }
