@@ -5028,3 +5028,77 @@ a:hover {
     color: var(--christmas-gold);
     font-weight: 800;
 }
+
+/* =========================
+   PROJECT STATUS ACCENTS
+   ========================= */
+.project-status.ongoing {
+    color: var(--success);
+    border-color: rgba(99, 212, 113, 0.22);
+    background: rgba(99, 212, 113, 0.08);
+}
+
+.project-status.paused {
+    color: var(--danger);
+    border-color: rgba(239, 71, 111, 0.25);
+    background: rgba(239, 71, 111, 0.10);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* =========================
+   CATCH X VIDEO & SOCIAL LINKS
+   ========================= */
+.tiktok-account-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.video-card-caption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-top: 0;
+    border-radius: 0 0 14px 14px;
+    background: var(--card);
+    color: var(--text);
+    font-size: 13px;
+}
+
+.video-card-caption a {
+    color: var(--purple-light);
+    font-weight: 700;
+}
+
+.video-card-caption a:hover {
+    color: var(--text);
+}
+
+.catch-x-videos-grid .video-card {
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+@media (max-width: 650px) {
+    .tiktok-account-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-card-caption {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
